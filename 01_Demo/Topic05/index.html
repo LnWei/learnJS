@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        //无名函数的定义
+        var result = function (a,b) {
+            return a + b;
+        }(1,2);
+        alert(result)
+
+        //无名函数的调用必须要函数的声明之后
+        var func01 = function (a,b) {
+            alert(a+b)
+        }
+        func01(5,6);
+
+        //有名函数的调用不一定在函数的声明之后
+        function func2(a,b) {
+            alert(a+b);
+        }
+        func2(1,5);
+    </script>
+<body>
+<!--<button onclick="func(5,6)">Test02</button>-->
+</head>
+</body>
+</html>

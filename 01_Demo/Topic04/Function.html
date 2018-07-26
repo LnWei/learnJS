@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function Test5() {
+            var oInput = document.getElementById("username");
+            if(oInput){
+                alert(oInput.value);
+            }
+        }
+
+        function Test6() {
+            var user = {
+                name: "jack"
+            }
+        }
+
+        function Test7() {
+            alert("hh");
+
+            var user01 = new User();
+            user01.name = "z";
+            alert(user01.name);
+
+            var user02 = new User();
+            alert(user02.name);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="Alert()">Mytest</button>
+
+    <input id="username" type="test" value="z"/>
+    <button onclick="Test5()">Test5</button>
+
+    <button onclick="Test6()">Test6</button>
+
+    <script type="text/javascript" src="js/Function.js"></script>
+    <button onclick="Test7()">Test7</button>
+</body>
+</html>

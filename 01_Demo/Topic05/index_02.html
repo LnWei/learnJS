@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //////////////////////////////////////////////////////////////
+        // alert(typeof (Function)       + " 01");
+        // alert(typeof (new Function()) + " 01_");
+        // alert(typeof (Array)          + " 02");
+        // alert(typeof (new Array())    + " 02_");
+        // alert(typeof (Object)         + " 03");
+        // alert(typeof (new Object())   + " 03_");
+        // alert(typeof (Date)           + " 04");
+        // alert(typeof (new Date())     + " 04_");
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Function.prototype.method1 = function () {
+        //     alert("function");
+        // }
+        //
+        // function myfunc() {
+        //     alert("mefunc");
+        // }
+        //
+        // myfunc.method1();
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //函数对象和其他内部对象的关系
+        // Object.prototype.getType = function () {
+        //     return typeof (this);
+        // }
+        //
+        // var arr = new Array();
+        // function func() {
+        //     alert("ok");
+        // }
+        //
+        // alert(arr.getType());
+        // alert(func.getType());
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //函数可作为参数传递
+        function func1(theFun) {
+            if(typeof (theFun) == "function"){
+                theFun();
+            }else {
+                alert(theFun);
+            }
+        }
+
+        function func2(){
+            alert();
+        }
+
+        func1(func2());//将fun2的结果传递给func1
+        func1(func2);  //传递的是fun2这个指针
+        //可用于页面的初始化，如先定义init函数，再执行window.onload = init
+        //window.onload = func2;
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

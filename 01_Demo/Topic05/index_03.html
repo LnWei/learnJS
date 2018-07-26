@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        // ////////////////////////////////////////////////////////////////////////////////////////////
+        // //argument：包含着传入函数的所有参数，不是一个数组对象
+        // function myfunc(a,b) {
+        //     alert(a);
+        //     alert(b);
+        //     for (var i = 0; i < arguments.length; i++){
+        //         alert(arguments[i]);
+        //     }
+        // }
+        // //callee：指向argument这个对象的函数
+        // var sum = function (n) {
+        //     if(1 == n){
+        //         return 1;
+        //     }else {
+        //         //return n + sum(n - 1);
+        //         return n + arguments.callee(n-1);
+        //     }
+        // };
+        //
+        // ////////////////////////////////////////////////////////////////////////////////////////////
+        // //apply，call：实现将函数作为另外一个对象的方法运行,即运行环境的转移
+        // function func1() {
+        //     this.p = "func1_";
+        //     this.A = function (arg) {
+        //         alert(this.p + arg);
+        //     };
+        // }
+        //
+        // function func2() {
+        //     this.p = "func2_";
+        //     this.B = function (arg) {
+        //         alert(this.p + arg);
+        //     };
+        // }
+        //
+        // var obj1 = new func1();
+        // var obj2 = new func2();
+        //
+        // obj1.A("byA");  //func1中的this指向obj1
+        // obj2.B("byB");  //func2中的this指向obj2
+        //
+        // obj1.A.apply(obj2,["byA_1","byA_2"]);     //func1中的this指向obj2
+        // obj2.B.apply(obj1,["byB_1","byB_2"]);     //func2中的this指向obj1
+        //
+        // obj1.A.call(obj2,"byA_1","byA_2");       //func1中的this指向obj2
+        // obj2.B.call(obj1,"byB_1","byB_2");       //func2中的this指向obj1
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        function myfunc1() {
+            alert("myfunc1");
+            var result = 0;     //一定要初始化
+            // if(myfunc1.length > 0){
+            //     if(myfunc1.length <= 2) {
+            //         result = arguments[1] + arguments[2];
+            //     }else if (myfunc1.length == 3) {
+            //         result = arguments[1] + arguments[2] + arguments[3];
+            //     }
+            // }
+            for (var i = 0; i < arguments.length; i++){
+                result += arguments[i];
+            }
+
+            return result;
+        }
+
+        alert(myfunc1(1,2));
+        alert(myfunc1.length);      //只能显示函数定义时指定的参数个数
+    </script>
+</head>
+<body>
+<!--<button onclick="myfunc(2,5,10)">rest1</button>-->
+<!--<button onclick="alert(sum(5))">rest1</button>-->
+</body>
+</html>
